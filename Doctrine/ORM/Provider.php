@@ -66,7 +66,7 @@ class Provider extends AbstractProvider
         $count = sprintf('%s.%s', $rootAliases[0], $metadata->getIdentifier()[0]);
 
         return $qb
-            >select($qb->expr()->count($count))
+            ->select($qb->expr()->count($count))
             // Remove ordering for efficiency; it doesn't affect the count
             ->resetDQLPart('orderBy')
             ->getQuery()
